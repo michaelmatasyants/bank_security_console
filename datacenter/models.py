@@ -1,4 +1,10 @@
 from django.db import models
+import datetime
+
+
+def format_duration(duration: int) -> str:
+    hours, minutes = int(duration // 3600), int(duration % 3600 // 60)
+    return f'{hours}h. {minutes}min.'
 
 
 class Passcard(models.Model):
@@ -28,3 +34,16 @@ class Visit(models.Model):
                 if self.leaved_at else 'not leaved'
             )
         )
+
+    def get_duration(self) -> int:
+        if self.leaved_at is None:
+            duration = (datetime.datetime.now() -
+                        self.entered_at.replace(tzinfo=None))
+            return duration.total_seconds()
+        duration = self.leaved_at - self.entered_at
+        return duration.total_seconds()
+
+    def is_long(self, minutes=60) -> bool:
+        if self.get_duration() > minutes * 60:
+            return True
+        return False
