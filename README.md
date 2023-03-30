@@ -40,7 +40,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 
-To make sure the data is displayed on the website, follow the link from the output: ` http://127.0.0.1:8000/`.
+To make sure the data is displayed on the website, follow the link from the output: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ### Project Goals
 The code is written for educational purposes.
