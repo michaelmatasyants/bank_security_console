@@ -1,6 +1,5 @@
 import os
 import sys
-import dj_database_url
 
 
 if __name__ == "__main__":
