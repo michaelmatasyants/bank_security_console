@@ -1,5 +1,7 @@
 import os
 import sys
+import dj_database_url
+
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")

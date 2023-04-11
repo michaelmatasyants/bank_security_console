@@ -18,20 +18,20 @@ This tutorial project shows how to connect to a database, make queries without S
 4. Create an .env file and locate it in the same directory where your project is. Copy and append database settings in `.env` file like this:
 
    ```console
-   ENGINE_BSC=paste_here_engine
-   HOST_BSC=paste_here_host
-   PORT_BSC=paste_here_port
-   NAME_BSC=paste_here_host_name
-   USER_BSC=paste_here_host_user
-   PASSWORD_BSC=paste_here_host_password
-   SECRET_KEY_BSC=paste_here_secret_key
-   DEBUG_BSC=pass False before publishing or True to debug
+   DB_ENGINE=paste_here_engine
+   DB_HOST=paste_here_host
+   DB_PORT=paste_here_port
+   DB_NAME=paste_here_host_name
+   DB_USER=paste_here_host_user
+   DB_PASSWORD=paste_here_host_password
+   DB_SECRET_KEY=paste_here_secret_key
+   DB_DEBUG=pass False before publishing or True to debug
    ```
 
 5. Settings:
 
    The settings.py (located in `/project/settings.py`) contains all the project propeties. To start working with the database, firstly you must connect to it (you only need to do the step 4).
-   Values of `ENGINE_BSC`, `HOST_BSC`, `PORT_BSC`, `NAME_BSC`, `USER_BSC`, `PASSWORD_BSC`, `SECRET_KEY_BSC` and `DEBUG_BSC` would be automatically passed from `.env` file to `/project/settings.py`.
+   Values of `DB_ENGINE`, `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_SECRET_KEY` and `DB_DEBUG` would be automatically passed from `.env` file to `/project/settings.py`.
    You can see for yourself by opening `settings.py`.
 
 6. Remember to add `.env` to your `.gitignore` if you are going to put the project on GIT.

@@ -1,25 +1,23 @@
 import os
 from environs import Env
+import dj_database_url
 
 
 env = Env()
 env.read_env()
 DATABASES = {
-    'default': {
-        'ENGINE': env("ENGINE_BSC"),
-        'HOST': env("HOST_BSC"),
-        'PORT': env("PORT_BSC"),
-        'NAME': env("NAME_BSC"),
-        'USER': env("USER_BSC"),
-        'PASSWORD': env("PASSWORD_BSC"),
-    }
+    'default': dj_database_url.config(
+        default='postgres://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}'.format(
+            USER=env("DB_USER"), PASSWORD=env("DB_PASSWORD"),
+            HOST=env("DB_HOST"), PORT=env("DB_PORT"), NAME=env("DB_NAME"))
+        )
 }
 
 INSTALLED_APPS = ['datacenter']
 
-SECRET_KEY = env("SECRET_KEY_BSC")
+SECRET_KEY = env("DB_SECRET_KEY")
 
-DEBUG = env.bool("DEBUG_BSC")
+DEBUG = env.bool("DB_DEBUG")
 
 ROOT_URLCONF = 'project.urls'
 
