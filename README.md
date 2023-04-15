@@ -24,8 +24,6 @@ This tutorial project shows how to connect to a database, make queries without S
    DB_NAME=paste_here_host_name
    DB_USER=paste_here_host_user
    DB_PASSWORD=paste_here_host_password
-   DB_SECRET_KEY=paste_here_secret_key
-   DB_DEBUG=pass False before publishing or True to debug
    ```
 
 5. Settings:
